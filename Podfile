@@ -10,6 +10,7 @@ target 'CoolApp' do
 
   # Pods for CoolApp
   pod 'SwiftyJSON'
+  pod 'Crashlytics'
 
   target 'CoolAppTests' do
     inherit! :search_paths

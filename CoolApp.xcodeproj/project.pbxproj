@@ -45,9 +45,12 @@
 		46179971C3E6C7EAA7CE848E /* Pods_CoolApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoolApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47DC3FBC345BD54CEAEB8D9F /* Pods-CoolAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoolAppUITests/Pods-CoolAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		49BF91E64C09250430BE0573 /* Pods-CoolAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoolAppTests/Pods-CoolAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7014EBE7C44C7997999CE256 /* Pods-CoolApp.testrelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolApp.testrelease.xcconfig"; path = "Pods/Target Support Files/Pods-CoolApp/Pods-CoolApp.testrelease.xcconfig"; sourceTree = "<group>"; };
+		7AD6EA058AED8490F9D9E6BA /* Pods-CoolAppUITests.testrelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolAppUITests.testrelease.xcconfig"; path = "Pods/Target Support Files/Pods-CoolAppUITests/Pods-CoolAppUITests.testrelease.xcconfig"; sourceTree = "<group>"; };
 		7EFDA4FA95DD44B1B5B66295 /* Pods-CoolApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoolApp/Pods-CoolApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8E9BE49E31A196216B1EA14F /* Pods_CoolAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoolAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A15A96299CD2C1DD505E4E /* Pods_CoolAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoolAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD1B326DC63C400D9AAAC4EB /* Pods-CoolAppTests.testrelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolAppTests.testrelease.xcconfig"; path = "Pods/Target Support Files/Pods-CoolAppTests/Pods-CoolAppTests.testrelease.xcconfig"; sourceTree = "<group>"; };
 		E142F662E932A77900C75F5E /* Pods-CoolApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoolApp/Pods-CoolApp.release.xcconfig"; sourceTree = "<group>"; };
 		E16CA5D72033AEE1004F240A /* MyHelperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHelperTest.swift; sourceTree = "<group>"; };
 		E1AF37682033A69F00986A6F /* CoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +109,9 @@
 				45E9D092B5467C681D5B9613 /* Pods-CoolAppTests.release.xcconfig */,
 				E71F58C87F71EC556D1CCC79 /* Pods-CoolAppUITests.debug.xcconfig */,
 				47DC3FBC345BD54CEAEB8D9F /* Pods-CoolAppUITests.release.xcconfig */,
+				7014EBE7C44C7997999CE256 /* Pods-CoolApp.testrelease.xcconfig */,
+				DD1B326DC63C400D9AAAC4EB /* Pods-CoolAppTests.testrelease.xcconfig */,
+				7AD6EA058AED8490F9D9E6BA /* Pods-CoolAppUITests.testrelease.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -190,6 +196,7 @@
 				E1AF37662033A69F00986A6F /* Resources */,
 				535BB8E134556F6429E98546 /* [CP] Embed Pods Frameworks */,
 				E2DE09F7E8C8AB54C10B417B /* [CP] Copy Pods Resources */,
+				E16777ED2038DAEC001AB891 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -254,16 +261,19 @@
 				TargetAttributes = {
 					E1AF37672033A69F00986A6F = {
 						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = 3E69BZ7F7E;
 						ProvisioningStyle = Automatic;
 					};
 					E1AF377D2033A6A000986A6F = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 3E69BZ7F7E;
+						ProvisioningStyle = Manual;
 						TestTargetID = E1AF37672033A69F00986A6F;
 					};
 					E1AF37882033A6A000986A6F = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 3E69BZ7F7E;
+						ProvisioningStyle = Manual;
 						TestTargetID = E1AF37672033A69F00986A6F;
 					};
 				};
@@ -433,6 +443,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoolAppTests/Pods-CoolAppTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E16777ED2038DAEC001AB891 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" e9f26fc7844d203e9eafd073d008a15d5173a0ec 792838fe3eefde484c704fe306e30736eb0c7c5fe2a778faaa902c72c9a09259";
+		};
 		E2DE09F7E8C8AB54C10B417B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -530,6 +553,121 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E16777E92038D6C5001AB891 /* TestRelease */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = TestRelease;
+		};
+		E16777EA2038D6C5001AB891 /* TestRelease */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7014EBE7C44C7997999CE256 /* Pods-CoolApp.testrelease.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = 3E69BZ7F7E;
+				INFOPLIST_FILE = CoolApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lomavede.CoolApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.lomavede.CoolApp";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = TestRelease;
+		};
+		E16777EB2038D6C5001AB891 /* TestRelease */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD1B326DC63C400D9AAAC4EB /* Pods-CoolAppTests.testrelease.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = YWDUQMKWB2;
+				INFOPLIST_FILE = CoolAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SSK.CoolAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoolApp.app/CoolApp";
+			};
+			name = TestRelease;
+		};
+		E16777EC2038D6C5001AB891 /* TestRelease */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AD6EA058AED8490F9D9E6BA /* Pods-CoolAppUITests.testrelease.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = YWDUQMKWB2;
+				INFOPLIST_FILE = CoolAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SSK.CoolAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CoolApp;
+			};
+			name = TestRelease;
+		};
 		E1AF37902033A6A000986A6F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -584,6 +722,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -631,9 +770,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE_SPECIFIER = "$(sign_coolapp_profile-name)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -642,15 +783,19 @@
 			baseConfigurationReference = 7EFDA4FA95DD44B1B5B66295 /* Pods-CoolApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YWDUQMKWB2;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = 3E69BZ7F7E;
 				INFOPLIST_FILE = CoolApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SSK.CoolApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lomavede.CoolApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -659,15 +804,20 @@
 			baseConfigurationReference = E142F662E932A77900C75F5E /* Pods-CoolApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YWDUQMKWB2;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = 3E69BZ7F7E;
 				INFOPLIST_FILE = CoolApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SSK.CoolApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lomavede.CoolApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.lomavede.CoolApp";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -677,7 +827,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YWDUQMKWB2;
 				INFOPLIST_FILE = CoolAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -695,7 +845,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YWDUQMKWB2;
 				INFOPLIST_FILE = CoolAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -712,7 +862,7 @@
 			baseConfigurationReference = E71F58C87F71EC556D1CCC79 /* Pods-CoolAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YWDUQMKWB2;
 				INFOPLIST_FILE = CoolAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -729,7 +879,7 @@
 			baseConfigurationReference = 47DC3FBC345BD54CEAEB8D9F /* Pods-CoolAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YWDUQMKWB2;
 				INFOPLIST_FILE = CoolAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -748,6 +898,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E1AF37902033A6A000986A6F /* Debug */,
+				E16777E92038D6C5001AB891 /* TestRelease */,
 				E1AF37912033A6A000986A6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -757,6 +908,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E1AF37932033A6A000986A6F /* Debug */,
+				E16777EA2038D6C5001AB891 /* TestRelease */,
 				E1AF37942033A6A000986A6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -766,6 +918,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E1AF37962033A6A000986A6F /* Debug */,
+				E16777EB2038D6C5001AB891 /* TestRelease */,
 				E1AF37972033A6A000986A6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -775,6 +928,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E1AF37992033A6A000986A6F /* Debug */,
+				E16777EC2038D6C5001AB891 /* TestRelease */,
 				E1AF379A2033A6A000986A6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
