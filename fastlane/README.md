@@ -21,6 +21,11 @@ or alternatively using `brew cask install fastlane`
 fastlane ios beta
 ```
 Push a new beta build to TestFlight
+### ios adhoc
+```
+fastlane ios adhoc
+```
+Push a ah-hoc internal distribution build to Crashlytics
 ### ios certificates
 ```
 fastlane ios certificates

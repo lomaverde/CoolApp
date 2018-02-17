@@ -1,12 +1,18 @@
 PODS:
+  - Crashlytics (3.9.3):
+    - Fabric (~> 1.7.2)
+  - Fabric (1.7.2)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
+  - Crashlytics
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
+  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: f3c3bb10934105edef9ed0c8ad398f7224cdb2f7
+PODFILE CHECKSUM: 8d14f8dcd3416746b294ead65f43e895a00a1103
 
 COCOAPODS: 1.3.1

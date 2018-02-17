@@ -23,7 +23,7 @@ platform :ios do
     increment_build_number(xcodeproj: "CoolApp.xcodeproj")
     sync_code_signing
 
-    disable_automatic_code_signing(path: "CoolApp.xcodeproj")
+    #disable_automatic_code_signing(path: "CoolApp.xcodeproj")
 
     gym(
       scheme: "CoolApp",
@@ -33,9 +33,40 @@ platform :ios do
       configuration: "Release",
       export_method: "app-store" )
 
-    enable_automatic_code_signing(path: "CoolApp.xcodeproj")
+    #enable_automatic_code_signing(path: "CoolApp.xcodeproj")
     upload_to_testflight
   end
+
+  desc "Push a ah-hoc internal distribution build to Crashlytics"
+  lane :adhoc do
+
+    match(git_url: "git@github.com-lv:lomaverde/match_ios.git",
+          type: "development",
+          app_identifier: "com.lomavede.CoolApp")
+
+    #increment_build_number(xcodeproj: "CoolApp.xcodeproj")
+    sync_code_signing
+
+    #disable_automatic_code_signing(path: "CoolApp.xcodeproj")
+
+    gym(
+      scheme: "CoolApp",
+      workspace: "uCoolApp.xcworkspace",
+      clean: true,
+      output_name: "coolApp.ipa",
+      configuration: "TestRelease",
+      export_method: "ad-hoc" )
+
+    #enable_automatic_code_signing(path: "CoolApp.xcodeproj")
+
+    # upload to Crashlytics
+    crashlytics(
+       api_token: "e9f26fc7844d203e9eafd073d008a15d5173a0ec",
+       build_secret: "792838fe3eefde484c704fe306e30736eb0c7c5fe2a778faaa902c72c9a09259"
+    )
+
+  end
+
 
   lane :certificates do
     match(app_identifier: ["com.lomavede.CoolApp"], readonly: true)
