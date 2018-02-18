@@ -267,13 +267,13 @@
 					E1AF377D2033A6A000986A6F = {
 						CreatedOnToolsVersion = 9.2;
 						DevelopmentTeam = 3E69BZ7F7E;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						TestTargetID = E1AF37672033A69F00986A6F;
 					};
 					E1AF37882033A6A000986A6F = {
 						CreatedOnToolsVersion = 9.2;
 						DevelopmentTeam = 3E69BZ7F7E;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						TestTargetID = E1AF37672033A69F00986A6F;
 					};
 				};
@@ -639,8 +639,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = YWDUQMKWB2;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3E69BZ7F7E;
 				INFOPLIST_FILE = CoolAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SSK.CoolAppTests;
@@ -656,8 +656,8 @@
 			baseConfigurationReference = 7AD6EA058AED8490F9D9E6BA /* Pods-CoolAppUITests.testrelease.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = YWDUQMKWB2;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3E69BZ7F7E;
 				INFOPLIST_FILE = CoolAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SSK.CoolAppUITests;
@@ -827,8 +827,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = YWDUQMKWB2;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3E69BZ7F7E;
 				INFOPLIST_FILE = CoolAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SSK.CoolAppTests;
@@ -845,8 +845,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = YWDUQMKWB2;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3E69BZ7F7E;
 				INFOPLIST_FILE = CoolAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SSK.CoolAppTests;
@@ -862,8 +862,8 @@
 			baseConfigurationReference = E71F58C87F71EC556D1CCC79 /* Pods-CoolAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = YWDUQMKWB2;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3E69BZ7F7E;
 				INFOPLIST_FILE = CoolAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SSK.CoolAppUITests;
@@ -879,8 +879,8 @@
 			baseConfigurationReference = 47DC3FBC345BD54CEAEB8D9F /* Pods-CoolAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = YWDUQMKWB2;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3E69BZ7F7E;
 				INFOPLIST_FILE = CoolAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SSK.CoolAppUITests;

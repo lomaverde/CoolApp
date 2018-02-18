@@ -67,6 +67,28 @@ platform :ios do
 
   end
 
+  desc "Run Unit and UI XCTest using the default device"
+  lane :test do
+    scan(scheme: "CoolApp",
+         code_coverage: true,
+         clean: true,
+         address_sanitizer: true,
+         thread_sanitizer: true,
+         output_directory: "test_report",
+         configuration: "TestRelease"
+         )
+  end
+
+  desc "Build for testing"
+  lane :buildtest do
+    scan(scheme: "CoolApp",
+         derived_data_path: "test_build",
+         clean: true,
+         build_for_testing: true,
+         configuration: "TestRelease",
+         destination: 'generic/platform=iOS'
+         )
+  end
 
   lane :certificates do
     match(app_identifier: ["com.lomavede.CoolApp"], readonly: true)
