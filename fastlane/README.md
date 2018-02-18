@@ -26,6 +26,16 @@ Push a new beta build to TestFlight
 fastlane ios adhoc
 ```
 Push a ah-hoc internal distribution build to Crashlytics
+### ios test
+```
+fastlane ios test
+```
+Run Unit and UI XCTest using the default device
+### ios buildtest
+```
+fastlane ios buildtest
+```
+Build for testing
 ### ios certificates
 ```
 fastlane ios certificates
