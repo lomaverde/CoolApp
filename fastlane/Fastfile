@@ -72,8 +72,6 @@ platform :ios do
     scan(scheme: "CoolApp",
          code_coverage: true,
          clean: true,
-         address_sanitizer: true,
-         thread_sanitizer: true,
          output_directory: "test_report",
          configuration: "TestRelease"
          )
