@@ -2,28 +2,27 @@
 #
 # Check https://circleci.com/docs/2.0/ios-migrating-from-1-2/ for more details
 #
+
 version: 2
 jobs:
-  build:
-
-    # Specify the Xcode version to use
+  build-and-test:
     macos:
       xcode: "9.2.0"
-
     steps:
-      - checkout
+      - run: pod install
+      - run: bundle install
+      - run: bundle exec fastlane test
 
-      # Install CocoaPods
-      - run:
-          name: Install CocoaPods
-          command: pod install
+  adhoc:
+    macos:
+      xcode: "9.2.0"
+    steps:
+      - run: pod install
+      - run: bundle install
+      - run: bundle exec fastlane adhoc
 
-      # Build the app and run tests
-      - run:
-          name: Build and run tests
-          command: bundle exec fastlane test
-          environment:
-            SCAN_DEVICE: iPhone 6
-
-
-
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - build-and-test
