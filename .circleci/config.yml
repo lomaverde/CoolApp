@@ -27,7 +27,7 @@ jobs:
           command: cp $FL_OUTPUT_DIR/report.junit $FL_OUTPUT_DIR/results.xml
           when: always
       - store_test_results:
-          path: $FL_OUTPUT_DIR
+          path: /Users/distiller/project/fastlane/test_output
 
   adhoc:
     macos:
