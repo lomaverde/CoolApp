@@ -19,6 +19,7 @@ jobs:
       - checkout
       - run: mkdir $FL_OUTPUT_DIR
       - run: bundle install
+      - run: pod install
       - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
