@@ -5,7 +5,7 @@
 
 version: 2
 jobs:
-  setup:
+  ci-setup:
     macos:
       xcode: "9.2.0"
     working_directory: /Users/distiller/project
@@ -79,9 +79,10 @@ workflows:
   version: 2
   build-test-adhoc:
     jobs:
-      - setup
+      - ci-setup
       - build-and-test:
-          requires: setup
+          requires:
+            - ci-setup
       - adhoc:
           filters:
             branches:
