@@ -9,6 +9,7 @@ jobs:
     macos:
       xcode: "9.2.0"
     steps:
+      - checkout
       - run: pod install
       - run: bundle install
       - run: bundle exec fastlane test
