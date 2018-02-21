@@ -31,6 +31,10 @@ jobs:
       FASTLANE_LANE: test
     shell: /bin/bash --login -o pipefail
     steps:
+      - checkout
+      - run: mkdir $FL_OUTPUT_DIR
+      - run: bundle install
+      - run: pod install
       - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
@@ -51,6 +55,10 @@ jobs:
       FASTLANE_LANE: adhoc
     shell: /bin/bash --login -o pipefail
     steps:
+      - checkout
+      - run: mkdir $FL_OUTPUT_DIR
+      - run: bundle install
+      - run: pod install
       - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
@@ -79,10 +87,7 @@ workflows:
   version: 2
   build-test-adhoc:
     jobs:
-      - ci-setup
-      - build-and-test:
-          requires:
-            - ci-setup
+      - build-and-test
       - adhoc:
           filters:
             branches:
