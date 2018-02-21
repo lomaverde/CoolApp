@@ -10,6 +10,8 @@ jobs:
       xcode: "9.2.0"
     working_directory: /Users/distiller/project
     environment:
+      LC_ALL: en_US.UTF-8
+      LANG: en_US.UTF-8
       FL_OUTPUT_DIR: /Users/distiller/project/output
       FASTLANE_LANE: test
     shell: /bin/bash --login -o pipefail
@@ -33,6 +35,8 @@ jobs:
       xcode: "9.2.0"
     working_directory: /Users/distiller/project
     environment:
+      LC_ALL: en_US.UTF-8
+      LANG: en_US.UTF-8
       FL_OUTPUT_DIR: /Users/distiller/project/output
       FASTLANE_LANE: adhoc
     shell: /bin/bash --login -o pipefail
