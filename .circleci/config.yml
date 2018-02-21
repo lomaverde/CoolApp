@@ -5,7 +5,6 @@
 
 version: 2
 jobs:
-
   setup:
     macos:
       xcode: "9.2.0"
@@ -81,7 +80,7 @@ workflows:
   build-test-adhoc:
     jobs:
       - setup
-      - build-and-test
+      - build-and-test:
           requires: setup
       - adhoc:
           filters:
