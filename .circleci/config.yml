@@ -5,6 +5,22 @@
 
 version: 2
 jobs:
+
+  setup:
+    macos:
+      xcode: "9.2.0"
+    working_directory: /Users/distiller/project
+    environment:
+      LC_ALL: en_US.UTF-8
+      LANG: en_US.UTF-8
+      FL_OUTPUT_DIR: /Users/distiller/project/output
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - checkout
+      - run: mkdir $FL_OUTPUT_DIR
+      - run: bundle install
+      - run: pod install
+
   build-and-test:
     macos:
       xcode: "9.2.0"
@@ -12,22 +28,18 @@ jobs:
     environment:
       LC_ALL: en_US.UTF-8
       LANG: en_US.UTF-8
-      FL_OUTPUT_DIR: /Users/distiller/project/fastlane/test_output
+      FL_OUTPUT_DIR: /Users/distiller/project/output
       FASTLANE_LANE: test
     shell: /bin/bash --login -o pipefail
     steps:
-      - checkout
-      - run: mkdir $FL_OUTPUT_DIR
-      - run: bundle install
-      - run: pod install
       - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
       - run:
-          command: cp $FL_OUTPUT_DIR/report.junit $FL_OUTPUT_DIR/results.xml
+          command: cp $FL_OUTPUT_DIR/scan/report.junit $FL_OUTPUT_DIR/scan/results.xml
           when: always
       - store_test_results:
-          path: /Users/distiller/project/fastlane/test_output
+          path: /Users/distiller/project/output/scan
 
   adhoc:
     macos:
@@ -40,9 +52,6 @@ jobs:
       FASTLANE_LANE: adhoc
     shell: /bin/bash --login -o pipefail
     steps:
-      - checkout
-      - run: bundle install
-      - run: pod install
       - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
@@ -51,7 +60,7 @@ jobs:
 
   beta:
     macos:
-      xcode: "9.0"
+      xcode: "9.2.0"
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: /Users/distiller/project/output
@@ -71,7 +80,9 @@ workflows:
   version: 2
   build-test-adhoc:
     jobs:
+      - setup
       - build-and-test
+          requires: setup
       - adhoc:
           filters:
             branches:
