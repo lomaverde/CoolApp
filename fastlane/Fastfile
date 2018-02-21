@@ -72,7 +72,6 @@ platform :ios do
     scan(scheme: "CoolApp",
          code_coverage: true,
          clean: true,
-         output_directory: "test_report",
          configuration: "TestRelease"
          )
   end
