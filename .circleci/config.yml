@@ -8,22 +8,68 @@ jobs:
   build-and-test:
     macos:
       xcode: "9.2.0"
+    working_directory: /Users/distiller/project
+    environment:
+      FL_OUTPUT_DIR: /Users/distiller/project/output
+      FASTLANE_LANE: test
+    shell: /bin/bash --login -o pipefail
     steps:
       - checkout
-      - run: pod install
-      - run: bundle exec fastlane test
+      - run: mkdir $FL_OUTPUT_DIR
+      - run: bundle install
+      - run:
+          name: Fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - run:
+          command: cp $FL_OUTPUT_DIR/scan/report.junit $FL_OUTPUT_DIR/scan/results.xml
+          when: always
+      - store_artifacts:
+          path: /Users/distiller/project/output
+      - store_test_results:
+          path: /Users/distiller/project/output/scan
 
   adhoc:
     macos:
       xcode: "9.2.0"
+    working_directory: /Users/distiller/project
+    environment:
+      FL_OUTPUT_DIR: /Users/distiller/project/output
+      FASTLANE_LANE: adhoc
+    shell: /bin/bash --login -o pipefail
     steps:
       - checkout
-      - run: pod install
       - run: bundle install
-      - run: bundle exec fastlane adhoc
+      - run:
+          name: Fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - store_artifacts:
+          path: /Users/distiller/project/output/coolApp.ipa
+
+  beta:
+    macos:
+      xcode: "9.0"
+    working_directory: /Users/distiller/project
+    environment:
+      FL_OUTPUT_DIR: /Users/distiller/project/output
+      FASTLANE_LANE: beta
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - checkout
+      - run: bundle install
+      - run:
+          name: Fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - store_artifacts:
+          path: /Users/distiller/project/output/coolApp.ipa
 
 workflows:
   version: 2
-  commit:
+  build-test-adhoc:
     jobs:
       - build-and-test
+      - adhoc:
+          filters:
+            branches:
+              only: build-for-testing
+          requires:
+            - build-and-test
