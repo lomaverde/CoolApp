@@ -94,5 +94,3 @@ workflows:
           filters:
             branches:
               only: build-for-testing
-          requires:
-            - build-and-test
