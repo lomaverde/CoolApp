@@ -57,6 +57,9 @@ jobs:
     steps:
       - checkout
       - run: mkdir $FL_OUTPUT_DIR
+      - add_ssh_keys:
+          fingerprints:
+            - "77:9f:9d:ec:8f:a7:13:c2:2b:21:7f:0d:86:a0:22:27"
       - run: bundle install
       - run: pod install
       - run:
@@ -87,7 +90,6 @@ workflows:
   version: 2
   build-test-adhoc:
     jobs:
-      - build-and-test
       - adhoc:
           filters:
             branches:
