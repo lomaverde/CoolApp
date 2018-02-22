@@ -41,8 +41,17 @@ jobs:
       - run:
           command: cp $FL_OUTPUT_DIR/scan/report.junit $FL_OUTPUT_DIR/scan/results.xml
           when: always
+       # Collect XML test results data to show in the UI,
+      # and save the same XML files under test-results folder
+      # in the Artifacts tab.
       - store_test_results:
+          path: /Users/distiller/project/output/scan/report.xml
+      - store_artifacts:
           path: /Users/distiller/project/output/scan
+          destination: scan-test-results
+      - store_artifacts:
+          path: ~/Library/Logs/scan
+          destination: scan-logs
 
   adhoc:
     macos:
@@ -92,13 +101,6 @@ workflows:
   build-test-adhoc:
     jobs:
       - build-and-test
-      - adhoc:
-          filters:
-            branches:
-              only: build-for-testing
-
-  build-test-adhoc:
-    jobs:
       - adhoc:
           filters:
             branches:
