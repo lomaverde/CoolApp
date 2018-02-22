@@ -57,11 +57,11 @@ jobs:
     steps:
       - checkout
       - run: mkdir $FL_OUTPUT_DIR
-      - add_ssh_keys:
-          fingerprints:
-            - "ab:d6:51:11:3f:ae:f7:75:ce:dc:c9:a7:10:70:bc:5f"
       - run: bundle install
       - run: pod install
+      - run:
+          name: Set up code signing
+          command: fastlane match --readonly
       - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
@@ -88,6 +88,15 @@ jobs:
 
 workflows:
   version: 2
+
+  build-test-adhoc:
+    jobs:
+      - build-and-test
+      - adhoc:
+          filters:
+            branches:
+              only: build-for-testing
+
   build-test-adhoc:
     jobs:
       - adhoc:
