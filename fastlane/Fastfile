@@ -13,10 +13,14 @@ default_platform(:ios)
 
 platform :ios do
 
+  before_all do
+    setup_circle_ci
+  end
+
   desc "Push a new beta build to TestFlight"
   lane :beta do
 
-    match(git_url: "git@github.com:lomaverde/match_ios.git",
+    match(git_url: "git@github.com-lv:lomaverde/match_ios.git",
           type: "appstore",
           app_identifier: "com.lomavede.CoolApp")
 
@@ -40,7 +44,7 @@ platform :ios do
   desc "Push a ah-hoc internal distribution build to Crashlytics"
   lane :adhoc do
 
-    match(git_url: "git@github.com:lomaverde/match_ios.git",
+    match(git_url: "git@github.com-lv:lomaverde/match_ios.git",
           type: "development",
           app_identifier: "com.lomavede.CoolApp")
 

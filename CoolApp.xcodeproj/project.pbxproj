@@ -11,6 +11,7 @@
 		621692872016E8C34A995E36 /* Pods_CoolApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46179971C3E6C7EAA7CE848E /* Pods_CoolApp.framework */; };
 		C01EE3770374295CE8396CFB /* Pods_CoolAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9BE49E31A196216B1EA14F /* Pods_CoolAppTests.framework */; };
 		E16CA5D82033AEE1004F240A /* MyHelperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CA5D72033AEE1004F240A /* MyHelperTest.swift */; };
+		E1790B142040DB7500D872BD /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1790B132040DB7500D872BD /* AnalyticsManager.swift */; };
 		E1AF376C2033A69F00986A6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AF376B2033A69F00986A6F /* AppDelegate.swift */; };
 		E1AF376E2033A69F00986A6F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AF376D2033A69F00986A6F /* FirstViewController.swift */; };
 		E1AF37702033A69F00986A6F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AF376F2033A69F00986A6F /* SecondViewController.swift */; };
@@ -53,6 +54,7 @@
 		DD1B326DC63C400D9AAAC4EB /* Pods-CoolAppTests.testrelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolAppTests.testrelease.xcconfig"; path = "Pods/Target Support Files/Pods-CoolAppTests/Pods-CoolAppTests.testrelease.xcconfig"; sourceTree = "<group>"; };
 		E142F662E932A77900C75F5E /* Pods-CoolApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoolApp/Pods-CoolApp.release.xcconfig"; sourceTree = "<group>"; };
 		E16CA5D72033AEE1004F240A /* MyHelperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHelperTest.swift; sourceTree = "<group>"; };
+		E1790B132040DB7500D872BD /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		E1AF37682033A69F00986A6F /* CoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1AF376B2033A69F00986A6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1AF376D2033A69F00986A6F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E1790B122040DB5300D872BD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E1790B132040DB7500D872BD /* AnalyticsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		E1AF375F2033A69F00986A6F = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +161,7 @@
 		E1AF376A2033A69F00986A6F /* CoolApp */ = {
 			isa = PBXGroup;
 			children = (
+				E1790B122040DB5300D872BD /* Managers */,
 				E1AF376B2033A69F00986A6F /* AppDelegate.swift */,
 				E1AF376D2033A69F00986A6F /* FirstViewController.swift */,
 				E1AF376F2033A69F00986A6F /* SecondViewController.swift */,
@@ -348,10 +359,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CoolApp/Pods-CoolApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Mixpanel-swift/Mixpanel.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mixpanel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,6 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1790B142040DB7500D872BD /* AnalyticsManager.swift in Sources */,
 				E1AF37A02033AA9100986A6F /* MyHelper.swift in Sources */,
 				E1AF379C2033A79E00986A6F /* CoolHelpers.swift in Sources */,
 				E1AF37702033A69F00986A6F /* SecondViewController.swift in Sources */,
@@ -618,7 +632,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 3E69BZ7F7E;
 				INFOPLIST_FILE = CoolApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -785,7 +799,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 3E69BZ7F7E;
 				INFOPLIST_FILE = CoolApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -807,7 +821,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 3E69BZ7F7E;
 				INFOPLIST_FILE = CoolApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

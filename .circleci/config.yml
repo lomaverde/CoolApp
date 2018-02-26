@@ -69,6 +69,8 @@ jobs:
       - run: bundle install
       - run: pod install
       - run:
+          command: bundle exec fastlane ci_build
+      - run:
           name: Set up code signing
           command: fastlane match --readonly
       - run:
