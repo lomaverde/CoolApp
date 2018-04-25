@@ -8,6 +8,8 @@
 
 import Foundation
 import Mixpanel
+import Fabric
+import Crashlytics
 
 protocol AnalyticsUser {
 
@@ -20,13 +22,12 @@ class AnalyticsManager: AnalyticsUser  {
 
     static func setup() {
         _ = MixpanelManager.shared
+        Fabric.with([Crashlytics.self])
     }
 
     func setUserIdentity() {
 
     }
-
-
 
 }
 
