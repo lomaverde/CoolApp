@@ -1,5 +1,5 @@
 
-git_url "git@github.com-lv:lomaverde/match_ios.git"
+git_url "git@github.com:lomaverde/match_ios.git"
 
 type "development" # The default type, can be: appstore, adhoc, enterprise or development
 
